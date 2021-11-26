@@ -165,8 +165,10 @@ function handleClick(evt) {
 
   // check for win
   if (checkForWin() == true) {
-    console.log(`Player ${currPlayer} won!`)
-    endGame(`Player ${currPlayer} won!`);
+    console.log(`Player ${currPlayer} won!`);
+    setTimeout(function(){
+      endGame(`Player ${currPlayer} won!`);
+    }, 100); 
     win = 1;
     disp.textContent = 'Player# ' + currPlayer + 'won!';
     document.getElementById("column-top").removeEventListener("click", handleClick);
