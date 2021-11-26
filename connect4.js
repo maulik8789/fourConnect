@@ -176,8 +176,12 @@ function handleClick(evt) {
 
   // check for tie
   // (DONE)TODO: check if all cells in board are filled; if so call, call endGame
-  if (count == 42)
-  endGame('it is a tie!');
+  if (count == 42){
+    setTimeout(function(){
+      endGame('it is a tie!');
+    }, 100);
+  }
+  
 
   // switch players
     // (DONE)TODO: switch currPlayer 1 <-> 2
