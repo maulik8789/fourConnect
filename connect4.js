@@ -41,7 +41,7 @@ function makeHtmlBoard() {
   
   // TODO: add comment for this code
   var top = document.createElement("tr");
-  top.setAttribute("id", "column-top");
+  top.setAttribute("id", "column-top1");
   top.addEventListener("click", handleClick);
 
   for (var x = 0; x < WIDTH; x++) {
@@ -165,7 +165,7 @@ function handleClick(evt) {
 
   // check for win
   if (checkForWin() == true) {
-    console.log(`Player ${currPlayer} won!`);
+    console.log(`Player ${currPlayer} won!`)
     setTimeout(function(){
       endGame(`Player ${currPlayer} won!`);
     }, 100); 
@@ -176,31 +176,42 @@ function handleClick(evt) {
 
   // check for tie
   // (DONE)TODO: check if all cells in board are filled; if so call, call endGame
-  if (count == 42){
+  if (count == 42)
+  {
     setTimeout(function(){
       endGame('it is a tie!');
     }, 100);
   }
-  
-
   // switch players
     // (DONE)TODO: switch currPlayer 1 <-> 2
+     
     if(currPlayer == 1 && win == 0) 
     {
       currPlayer = 2;
+      let topC = document.querySelector('#column-top1');
+      topC.setAttribute("id", "column-top2");
       disp.classList.add('display2');
       disp.textContent = 'Player #2 Turn';
       disp.classList.remove('display1');
     }
     else if(currPlayer == 2 && win == 0)   
     {
-      currPlayer = 1; 
+      currPlayer = 1;
+      let topC = document.querySelector('#column-top2');
+      topC.setAttribute("id", "column-top1"); 
       disp.classList.add('display1');
       disp.textContent = 'Player #1 Turn';
       disp.classList.remove('display2');
     }
 
 }
+
+let reset = document.querySelector('#reset');
+reset.addEventListener('click', function(e){
+  e.preventDefault();
+  location.reload();
+})
+reset;
 
 
 makeBoard();

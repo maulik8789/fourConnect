@@ -6,7 +6,7 @@
 }
 
 #playerNum{
-  margin-top: 100px;
+  margin-top: 10px;
   margin-left: 40%;
   font-size: xx-large;
 }
@@ -48,11 +48,21 @@
 
 /* column-top is table row of clickable areas for each column */
 
-#column-top td {
-  border: dashed 1px lightgray;
+#column-top1 td {
+  background-color: green;
 }
 
-#column-top td:hover  {
-  background-color: gold;
+#column-top1 td:hover {
+  background-color: crimson;
   border-radius: 50%;
 }
+
+#column-top2 td {
+  background-color: green;
+}
+
+#column-top2 td:hover {
+  background-color: blue;
+  border-radius: 50%;
+}
+/* border: dashed 1px lightgray; */
