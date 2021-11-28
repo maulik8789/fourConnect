@@ -161,7 +161,7 @@ function handleClick(evt) {
     placeInTable(y, x);
     board[y][x] = currPlayer;  
   }
-
+ 
 
   // check for win
   if (checkForWin() == true) {
